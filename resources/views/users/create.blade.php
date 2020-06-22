@@ -32,7 +32,7 @@
                     <input type="password" class="form-control" name="password"/>
                 </div>
                                 
-                <button type="submit" class="btn btn-primary-outline">Add user</button>
+                <button type="submit" class="btn btn-primary">Add user</button>
             </form>
         </div>
     </div>

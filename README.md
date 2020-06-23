@@ -1,5 +1,3 @@
-
-
 ## About The application
 
 This is a small framework implemented with Laravel 7 for creating, reading, updating and deleting users.
@@ -17,11 +15,11 @@ This is a small framework implemented with Laravel 7 for creating, reading, upda
 
 ## Installation
 
-- https://github.com/Yoanns/user-crud-app.git
+- <code>git clone https://github.com/Yoanns/user-crud-app.git</code>
 - <code>cd user-crud-app/</code>
 - Create the MySQL Database 
-	** <code>mysql -u my_app -p<code>  //enter the password secret
-	**<code>create database my_app;<code>
+    <code>mysql -u my_app -p<code>  //enter the password secret
+	<code>create database my_app;<code>
 - <code>cp .env.example .env</code>
 - Update <code>.env</code> and set your database credentials
 - <code>php artisan migrate</code>
@@ -53,4 +51,3 @@ This is a small framework implemented with Laravel 7 for creating, reading, upda
 ## Unit test
 
 Still running.
-

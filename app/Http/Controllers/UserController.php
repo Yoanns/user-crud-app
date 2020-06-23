@@ -38,6 +38,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request);
         //Ensure that these fields are not empty
         $request->validate([
             'email' => 'required',
@@ -62,8 +63,7 @@ class UserController extends Controller
                 $user->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension(),
                 'public'
             );
-            /*$filename = $user->id.'_avatar'.time().'.'.$request->file('avatar')->getClientOriginalExtension();
-            $request->file('avatar')->storeAs('avatars',$filename,'public');*/
+
             $user->avatar = $filename;
 
             $user->save();
@@ -122,8 +122,6 @@ class UserController extends Controller
         $user->password = $request->get('password');
 
         if ($request->hasFile('avatar')){
-            /*$filename = $id.'_avatar'.time().'.'.$request->avatar->getClientOriginalExtension();
-            $request->avatar->storeAs('avatars',$filename,'public');*/
             $filename = $request->file('avatar')->storeAs(
                 'avatars',
                 $user->id.'_avatar'.time().'.'.$request->avatar->getClientOriginalExtension(),

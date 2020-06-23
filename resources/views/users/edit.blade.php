@@ -1,4 +1,4 @@
-@extends('template') 
+@extends('template')
 @section('main')
 <div class="row">
     <div class="col-sm-8 offset-sm-2">
@@ -11,10 +11,10 @@
                 @endforeach
             </ul>
         </div>
-        <br /> 
+        <br />
         @endif
-        <form method="post" action="{{ route('users.update', $user->id) }}">
-            @method('PATCH') 
+        <form method="post" action="{{ route('users.update', $user->id) }}" enctype="multipart/form-data">
+            @method('PATCH')
             @csrf
             <div class="form-group">
                 <label for="email">Email:</label>
@@ -31,6 +31,11 @@
             <div class="form-group">
                 <label for="password">Password:</label>
                 <input type="password" class="form-control" name="password" value={{ $user->password }} />
+            </div>
+            <div class="form-group">
+                <label for="avatar">Avatar:</label>
+                <input type="file" class="form-control" name="avatar" value="{{ $user->avatar }}" />
+                <img src="/storage/{{ $user->avatar }}" alt="Avatar" width="40" height="40"/>
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
         </form>

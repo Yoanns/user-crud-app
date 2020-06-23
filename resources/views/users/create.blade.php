@@ -13,7 +13,7 @@
                 </ul>
             </div><br />
             @endif
-            <form method="post" action="{{ route('users.store') }}">
+            <form method="post" action="{{ route('users.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="email">Email:</label>
@@ -30,6 +30,10 @@
                 <div class="form-group">
                     <label for="password">Password:</label>
                     <input type="password" class="form-control" name="password"/>
+                </div>
+                <div class="form-group">
+                    <label for="avatar">Avatar:</label>
+                    <input type="file" class="form-control" name="avatar"/>
                 </div>
                                 
                 <button type="submit" class="btn btn-primary">Add user</button>

@@ -53,9 +53,24 @@ class UserController extends Controller
             'lastname' => $request->get('lastname'),
             'password' => $request->get('password')
         ]);
-        $user->save();
 
-        return redirect('/users')->with('success', 'User saved!');
+        $user->save();
+        $user = User::find($user->id);
+        if ($request->hasFile('avatar')){
+            $filename = $request->file('avatar')->storeAs(
+                'avatars',
+                $user->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension(),
+                'public'
+            );
+            /*$filename = $user->id.'_avatar'.time().'.'.$request->file('avatar')->getClientOriginalExtension();
+            $request->file('avatar')->storeAs('avatars',$filename,'public');*/
+            $user->avatar = $filename;
+
+            $user->save();
+        }
+
+
+        return redirect('/users')->with('success', 'User created!');
     }
 
     /**
@@ -105,6 +120,18 @@ class UserController extends Controller
         $user->firstname = $request->get('firstname');
         $user->lastname = $request->get('lastname');
         $user->password = $request->get('password');
+
+        if ($request->hasFile('avatar')){
+            /*$filename = $id.'_avatar'.time().'.'.$request->avatar->getClientOriginalExtension();
+            $request->avatar->storeAs('avatars',$filename,'public');*/
+            $filename = $request->file('avatar')->storeAs(
+                'avatars',
+                $user->id.'_avatar'.time().'.'.$request->avatar->getClientOriginalExtension(),
+                'public'
+            );
+            $user->avatar = $filename;
+        }
+
         $user->save();
 
         return redirect('/users')->with('success', 'User updated!');

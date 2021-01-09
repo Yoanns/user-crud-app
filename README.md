@@ -30,25 +30,21 @@ This is a small framework implemented with Laravel 7 for creating, reading, upda
     
 ## Screenshots
 
-- Startpage
+- ![Startpage](/images/1_startpage.png)
 
-- First use page
+- ![First use page](/images/2_first_start.png)
 
-- Creation User with Avatar
+- ![Creation User with Avatar](/public/images/3_user_with_avatar.png)
 
-- List of users
+- ![List of users](/public/images/4_list_users.png)
 
-- Creation User with no Avatar
+- ![Creation User with no Avatar](/public/images/5_user_no_avatar.png)
 
-- New list of users
+- ![New list of users](/public/images/6_list_users.png)
 
-- Update of user
+- ![Update of user](/public/images/7_update_user.png)
 
-- Updated list of users
+- ![Updated list of users](/public/images/8_list_users.png)
 
-- Delete a user
+- ![Delete a user](/public/images/9_delete_user.png)
 
-
-## Unit test
-
-Still running.

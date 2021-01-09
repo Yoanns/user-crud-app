@@ -30,9 +30,9 @@ This is a small framework implemented with Laravel 7 for creating, reading, upda
     
 ## Screenshots
 
-- ![Startpage](/images/1_startpage.png)
+- ![Startpage](/public/images/1_startpage.png)
 
-- ![First use page](/images/2_first_start.png)
+- ![First use page](/public/images/2_first_start.png)
 
 - ![Creation User with Avatar](/public/images/3_user_with_avatar.png)
 
@@ -47,4 +47,3 @@ This is a small framework implemented with Laravel 7 for creating, reading, upda
 - ![Updated list of users](/public/images/8_list_users.png)
 
 - ![Delete a user](/public/images/9_delete_user.png)
-
